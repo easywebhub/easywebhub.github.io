@@ -17,13 +17,49 @@ const site = {
 
     // global metadata của site
     metadata: {
-        site: {
-            title: 'EasyWeb website',
-            description: 'description of this site',
-            keywords: 'easy web, thiết kế web đơn giản,',
-            author: 'vinaas ltd.,co', 
-            url: 'http://handy.themes.zone'
+      site: {
+        url: "http://vinaas.com",
+        ref_url : "http://demo.easywebhub.com/website-vinaas",
+        title: "Công ty TNHH Phần Mềm Tiên Tiến Việt Nam",
+        author: "Desmond create, Baotnq edit",
+        description: "To make something special you just have to believe it's special!",
+        email: "contact@vinaas.com",
+        favicon: "/img/favicon.png",
+        logo: "/img/favicon.png",
+        cover: "/img/favicon.png",
+      },
+      navigation: [
+        {
+          name: 'Trang chủ',
+          href: '/',
+          section: 'home', sub: 'Giới thiệu Vinaas'
+        },
+        {
+          name: 'Sản phẩm',
+          href: '/sanpham.html',
+          section: 'product',sub: 'Đã thực hiện'
+        },
+        {
+          name: 'Dịch vụ',
+          href: '/dichvu.html',
+          section: 'service', sub: 'Cho khách hàng'
+        },
+        {
+          name: 'Về chúng tôi',
+          href: '/vechungtoi.html',
+          section: 'about', sub: 'We are family'
+        },
+        {
+          name: 'Bài viết',
+          href: '/baiviet.html',
+          section: 'blog', sub: 'Chia sẽ kiến thức'
+        },
+        {
+          name: 'Liên hệ',
+          href: '/lienhe.html',
+          section: 'lienhe', sub: 'Lets coffee'
         }
+      ]
     }
 };
 
@@ -105,7 +141,7 @@ site.metalsmith = {
         // config rieng cho 1 collection
         linksets:   [{
             match:   {collection: 'blog'},
-            pattern: 'aaa-:title'
+            pattern: ':title'
         }]
     },
 
