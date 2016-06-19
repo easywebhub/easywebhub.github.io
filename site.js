@@ -22,13 +22,13 @@ const site = {
         ref_url : "http://demo.easywebhub.com/website-vinaas",
         title: "Công ty TNHH Phần Mềm Tiên Tiến Việt Nam",
         author: "Desmond create, Baotnq edit",
-        description: "To make something special you just have to believe it's special!",
+        description: "<strong>We help someone that helps all</strong>.<br /> Chúng tôi cung cấp các dịch vụ hỗ trợ cá nhân, tối ưu doanh nghiệp nhằm mang lại giá trị to lớn cho cộng đồng",
         email: "contact@vinaas.com",
         favicon: "/img/favicon.png",
         logo: "/img/favicon.png",
         cover: "/img/favicon.png",
       },
-      navigation: [
+      menu_left: [
         {
           name: 'Trang chủ',
           href: '/',
@@ -43,23 +43,26 @@ const site = {
           name: 'Dịch vụ',
           href: '/dichvu.html',
           section: 'service', sub: 'Cho khách hàng'
-        },
-        {
-          name: 'Về chúng tôi',
-          href: '/vechungtoi.html',
-          section: 'about', sub: 'We are family'
-        },
-        {
-          name: 'Bài viết',
-          href: '/baiviet.html',
-          section: 'blog', sub: 'Chia sẽ kiến thức'
-        },
-        {
-          name: 'Liên hệ',
-          href: '/lienhe.html',
-          section: 'lienhe', sub: 'Lets coffee'
         }
-      ]
+
+      ],
+     menu_right : [
+       {
+         name: 'Về chúng tôi',
+         href: '/aboutus',
+         section: 'about', sub: 'We are family'
+       },
+       {
+         name: 'Bài viết',
+         href: '/baiviet.html',
+         section: 'blog', sub: 'Chia sẻ kiến thức'
+       },
+       {
+         name: 'Liên hệ',
+         href: '/lienhe.html',
+         section: 'lienhe', sub: 'Lets coffee'
+       }
+     ]
     }
 };
 
@@ -130,13 +133,17 @@ site.metalsmith = {
         'baiviet': {
             'sortBy':  'date',
             'reverse': true
+        },
+        'project': {
+            'sortBy':  'date',
+            'reverse': true
         }
     },
 
     'metalsmith-permalinks':    {
         '_enable':  true,
         // default config
-        'pattern':  ':title',
+        'pattern':  ':url',
         'relative': false,
         // config rieng cho 1 collection
         linksets:   [{

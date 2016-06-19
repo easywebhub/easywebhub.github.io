@@ -1,6 +1,7 @@
 {{#extend "default"}}
   {{#content "main"}}
-
+<!-- START MAIN CONTAINER -->
+<div class="main-container">
   <div class="container">
       <!-- SKILLS -->
       <h2 class="with-breaker animate-me fadeInUp">
@@ -33,33 +34,19 @@
 </h2>
   </div>
 
-  <div id="portfolio-container" class="with-separation-bottom with-separation-top">
-    <% if @getCollection('projects').length >= 5 : %>
-          <% for soluong in [0...6]: %>
-            <% project = @getCollection('projects').toJSON()[soluong] %>
-            <figure class="portfolio-item effect-sadie">
-                <img src="<%= project.images[0].url %>" alt="project.images[0].alt"/>
-                <figcaption>
-                    <h4><%= project.title %></h4>
-                    <p><%= project.description %></p>
-                    <a href="<%= project.url %>">View more</a>
-                </figcaption>
-            </figure>
-          <% end %>
-          <% else: %>
-          <% for soluong in [0...@getCollection('projects').length]: %>
-            <% project = @getCollection('projects').toJSON()[soluong] %>
-            <figure class="portfolio-item effect-sadie">
-                <img src="<%= project.images[0].url %>" alt="project.images[0].alt"/>
-                <figcaption>
-                    <h4><%= project.title %></h4>
-                    <p><%= project.description %></p>
-                    <a href="<%= project.url %>">View more</a>
-                </figcaption>
-            </figure>
-              <% end %>
-          <% end %>
-      </div>
+    <div id="portfolio-container" class="with-separation-bottom with-separation-top">
+      {{#each collections.project}}
+        <figure class="portfolio-item effect-sadie">
+            <img src="{{this.screenshots.0.imageUrl}}" alt="{{this.title}}"/>
+            <figcaption>
+                <h4>{{this.projectTitle}}</h4>
+                <p>{{this.description}}</p>
+                <a href="{{this.url}}">View more</a>
+            </figcaption>
+        </figure>
+      {{/each}}
+    </div>
+
       <div class="portfolio-button center animate-me zoomIn">
           <a href="sanpham.html" class="btn btn-default"><i class="fa fa-suitcase"></i> Xem thêm</a>
       </div>
@@ -81,7 +68,7 @@
 
           <div class="container">
                   <!-- COMMENTS SHORTCODEs -->
-                  <h2 class="with-breaker animate-me fadeInUp">
+          <h2 class="with-breaker animate-me fadeInUp">
               Tin tức<span>Chia sẽ kiến thức.</span>
             </h2>
               </div>

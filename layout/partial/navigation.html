@@ -10,7 +10,7 @@
 
     <!-- <ul id="left-navigation" class="animate-me fadeInLeftBig"> -->
       <ul id="left-navigation" class="">
-        {{#each navigation}}
+        {{#each menu_left}}
           <li class="menu-item">
             <a href="{{ this.href}}" data-description="{{ this.sub}}">{{ this.name}}</a>
           </li>
@@ -25,11 +25,10 @@
     </div>
     <!-- <ul id="right-navigation" class="animate-me fadeInRightBig"> -->
       <ul id="right-navigation" class="">
-        <!-- Show from 3 to 5 of array-->
-        <!-- {{#each navigation}}
+        {{#each menu_right}}
           <li class="menu-item">
-            <a href="{{ this.href}}" data-description="{{ this.sub}}">{{ this.name}}</a>
+            <a href="{{this.href}}" data-description="{{ this.sub}}">{{ this.name}}</a>
           </li>
-        {{/each}} -->
+        {{/each}}
     </ul>
 </nav>

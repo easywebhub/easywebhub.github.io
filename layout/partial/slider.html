@@ -27,6 +27,11 @@
 <!-- HEADER SLIDER -->
 <div class="flexslider" id="header-slider">
     <ul class="slides">
+        {{#each sliders}}
+          <li>
+              <img src="{{this.imageUrl}}" alt="{{this.alt}}">
+          </li>
+        {{/each}}
         <li>
             <img src="{{site.ref_url}}/images/backgrounds/bg-a1.jpg" alt="SLider Image">
         </li>

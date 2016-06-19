@@ -70,34 +70,29 @@
         </header>
         <!-- END HEADER -->
 
-        <!-- START MAIN CONTAINER -->
-        <div class="main-container">
-
 {{#block "main"}}
   {{{contents}}}
 {{/block}}
 
-<!-- START FOOTER -->
+      <!-- START FOOTER -->
       <footer id="footer" class="with-separation-top">
           <aside id="widgets" class="container">
               <div class="row">
                   <!-- WIDGET -->
                   <div class="col-md-4 widget animate-me fadeInLeft">
                       <img src="{{site.ref_url}}/images/logo-footer.png" id="footer-logo" alt="Logo footer">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper felis pulvinar neque pharetra auctor. Donec vel erat pretium, interdum justo sed, mollis tortor.</p>
+                      <p>{{{site.description}}}</p>
                   </div>
                   <!-- WIDGET -->
                   <div class="col-md-4 widget animate-me fadeInUp">
                       <h4>Danh mục</h4>
                       <ul>
-                          <li><a href="index.html">Home</a>
-                          </li>
-                          <li><a href="portfolio.html">Portfolio</a>
-                          </li>
-                          <li><a href="blog.html">Blog</a>
-                          </li>
-                          <li><a href="about.html">About Us</a>
-                          </li>
+                        {{#each menu_left}}
+                          <li><a href="{{this.href}}">{{this.name}}</a></li>
+                        {{/each}}
+                        {{#each menu_right}}
+                          <li><a href="{{this.href}}">{{this.name}}</a></li>
+                        {{/each}}
                       </ul>
                   </div>
                   <!-- WIDGET -->
@@ -105,7 +100,7 @@
                       <h4>Liên hệ</h4>
                       <ul class="contact-informations">
                           <li class="contact-address">305 Hồng Lạc, Phường 10, Quận Tân Bình, TP Hồ Chí Minh </li>
-                          <li class="contact-phone">01999010101 - contact@vinaas.com </li>
+                          <li class="contact-phone"> contact@vinaas.com </li>
                       </ul>
                       <ul class="widget-social">
                           <!-- ALL ICONS AVAILABLE ->http://fortawesome.github.io/Font-Awesome/icons/#brand-->
@@ -122,7 +117,7 @@
           </aside>
           <div id="copyright" class="animate-me fadeInUp">
               <div class="container">
-                  <p>&#169; 2014. Công ty TNHH Phần mềm Tiên Tiến Việt Nam.</p>
+                  <p>&#169; 2016. {{site.title}}</p>
                   <!-- <ul id="footer-navigation">
                       <li><a href="page.html">Terms of Use</a>
                       </li>
@@ -139,53 +134,6 @@
       <!-- SCROLL TOP -->
       <a href="#" id="scroll-top" class="fadeInRight animate-me"><i class="fa fa-angle-double-up"></i></a>
   </div>
-
-  <!-- <script >(function(){
-      /* Did we just livereload? */
-      var log = !!(localStorage && console && console.log && true);
-      if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
-      localStorage.removeItem('/docpad-livereload/reloaded');
-      console.log('LiveReload completed at', new Date())
-      }
-
-      /* Listen for the regenerated event and perform a reload of the page when the event occurs */
-      var listen = function(){
-      var primus = new Primus('/docpad-livereload');
-      primus.on('data', function(data){
-        if ( data && data.message ) {
-          if ( data.message === 'generateBefore' ) {
-            if ( log ) {
-              console.log('LiveReload started at', new Date());
-            }
-            if ( typeof document.getElementsByTagName !== 'undefined' ) {
-      document.getElementsByTagName('html')[0].className += ' wait';
-      }
-          }
-          else if ( data.message === 'generateAfter' ) {
-            if ( log ) {
-              localStorage.setItem('/docpad-livereload/reloaded', 'yes');
-            }
-            document.location.reload();
-          }
-        }
-      });
-      };
-      /* Inject socket into our page */
-      var inject = function(){
-      var t = document.createElement('script');
-      t.type = 'text/javascript';
-      t.async = 'async';
-      t.src = '/docpad-livereload/primus.js';
-      t.onload = listen;
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-      };
-      if ( typeof Primus !== 'undefined' ) {
-        listen();
-      } else {
-        inject();
-      }
-      })();</script> -->
       <script defer="defer"  src="{{site.ref_url}}/js/jquery-1.11.1.min.js"></script>
       <script defer="defer"  src="{{site.ref_url}}/js/plugins.js"></script>
       <script defer="defer"  src="{{site.ref_url}}/js/custom.js"></script>
