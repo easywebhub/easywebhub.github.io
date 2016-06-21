@@ -9,23 +9,17 @@
 </h2>
       <table id="skills-container" class="skills">
           <tr class="skills-row">
-              <td class="skill animate-me zoomIn">
-                  <h4><i class="fa fa-star-o"></i>Rich Internet Applications</h4>
-                  <p>Với nhiều năm kinh nghiệm tư vấn & phát triển giải pháp doanh nghiệp phức tạp trên nền WEB, VinaAS có thể tạo ra những ứng dụng WEB mạnh mẽ có khả năng tương tác cao, nghiệp vụ phức tạp, thông minh và thân thiện. Sản phẩm của VinaAS được thiết kế giúp doanh nghiệp tối ưu các hoạt động quản lý, nâng cao hiệu xuất, tăng trưởng kinh doanh và giảm thiểu chi phí.</p>
-              </td>
-              <td class="skill animate-me zoomIn">
-                  <h4><i class="fa fa-envelope-o"></i>Data Analysis & Calculation</h4>
-                  <p>VinaAS cung cấp dịch vụ phân tích dữ liệu, mô hình hóa, xử lý số liệu đo đạc, tính toán tự động... giúp giải quyết các vấn để phức tạp chuyên biệt trong các ngành dầu khí, xây dựng một cách nhanh chóng, chính xác. Với đội ngũ nhân sự có trình độ chuyên môn cao, VinaAS đã phát triển thành công các sản phẩm chuyên biệt, đặc thù cho các lĩnh vực đòi hỏi độ phức tạp và tính chính xác cao.</p>
-              </td>
-              <td class="skill animate-me zoomIn">
-                  <h4><i class="fa fa-line-chart"></i>Custome Software</h4>
-                  <p>Cho dù bạn đang có một ý tưởng khởi nghiệp cần khái niệm hóa với hình ảnh trực quan để thuyết phục các nhà đầu tư, hay bạn đang cần một giải pháp phần mềm hoàn chỉnh dành riêng cho công ty bạn trong khi các giải pháp trên thị trường không phù hợp với quy trình và yêu cầu của công ty... VinaAS sẵn sàng cung cấp các dịch vụ phát triển phần mềm đầy đủ cũng như theo từng giai đoạn của dự án</p>
-              </td>
+              {{#each three_services}}
+                <td class="skill animate-me zoomIn">
+                    <h4><i class="{{this.icon_class}}"></i>{{this.title}}</h4>
+                    <p>{{this.short_info}}</p>
+                </td>
+              {{/each}}
           </tr>
 
       </table>
       <div class="skill-button center animate-me fadeInUp">
-          <a href="skills.html" class="btn btn-default"><i class="fa fa-trophy"></i> Xem thêm</a>
+          <a href="dichvu.html" class="btn btn-default"><i class="fa fa-trophy"></i> Xem chi tiết</a>
       </div>
 
       <!--PORTFOLIO -->
@@ -55,13 +49,13 @@
           <section class="custom-section-container with-separation-bottom with-separation-top">
               <div class="container">
                   <div class="custom-section-text">
-                      <h2 class="animate-me fadeInLeft">Xin chào, có phải bạn cần tư vấn, dùng thử sản phẩm?</h2>
-                      <p class="animate-me fadeInLeft">Chúng tôi sẵn sàng hỗ trợ, tư vấn khách hàng 24/7 - Bạn hãy liên lạc ngay khi cần, chúng tôi luôn ở đây</p>
+                      <h2 class="animate-me fadeInLeft">{{contact_block.title}}</h2>
+                      <p class="animate-me fadeInLeft">{{contact_block.description}}</p>
 
                   </div>
                   <div class="custom-section-buttons">
 
-                      <a href="page.html" class="btn btn-default animate-me fadeInRight"><i class="fa fa-book"></i> Liên hệ ngay</a>
+                      <a href="{{contact_block.url}}" class="btn btn-default animate-me fadeInRight"><i class="fa fa-book"></i>{{contact_block.btn_text}}</a>
                   </div>
               </div>
           </section>

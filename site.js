@@ -35,7 +35,7 @@ const site = {
           section: 'home', sub: 'Giới thiệu Vinaas'
         },
         {
-          name: 'Sản phẩm',
+          name: 'Dự Án',
           href: '/sanpham.html',
           section: 'product',sub: 'Đã thực hiện'
         },
